@@ -38,7 +38,7 @@ const Login = () => {
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Tu nombre"
+                            placeholder="Tu email"
                             value={email}
                             onChange={onChange}
                         />

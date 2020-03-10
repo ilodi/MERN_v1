@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 
 
 const NuevaCuenta = () => {
-    //State oara ubucuar sesiòn
+    //State para ubucuar sesiòn
     const [usuario, setUsuario] = useState({
+        nombre: '',
         email: '',
-        password: ''
+        password: '',
+        confirmar: ''
     })
     //extraer de usuario
-    const { email, password } = usuario;
+    const { nombre, email, password, confirmar } = usuario;
 
     const onChange = (e) => {
         setUsuario({
@@ -29,16 +31,27 @@ const NuevaCuenta = () => {
     return (
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
-                <h1>Inicia sesiòn</h1>
+                <h1>Crear Cuenta</h1>
                 <form
                     onSubmit={onSubmit}>
+                    <div className="campo-form">
+                        <label htmlFor="nombre">Nombre Usuario</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Tu nombre"
+                            value={nombre}
+                            onChange={onChange}
+                        />
+                    </div>
                     <div className="campo-form">
                         <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email"
-                            placeholder="Tu nombre"
+                            placeholder="Tu email"
                             value={email}
                             onChange={onChange}
                         />
@@ -55,11 +68,23 @@ const NuevaCuenta = () => {
                         />
                     </div>
                     <div className="campo-form">
-                        <input type="submit" className="btn btn-primario btn-block" value="Iniciar sesiòn" />
+                        <label htmlFor="confirmar">Confirmar password</label>
+                        <input
+                            type="password"
+                            id="confirmar"
+                            name="confirmar"
+                            placeholder=">Confirmar password"
+                            value={confirmar}
+                            onChange={onChange}
+                        />
+                    </div>
+                    
+                    <div className="campo-form">
+                        <input type="submit" className="btn btn-primario btn-block" value="Regístrate" />
                     </div>
                 </form>
-                <Link to={'/nueva-cuenta'} className="enlace-cuenta">
-                    Obtener Cuenta
+                <Link to={'/'} className="enlace-cuenta">
+                    ya tienes cuenta
                 </Link>
             </div>
         </div>
