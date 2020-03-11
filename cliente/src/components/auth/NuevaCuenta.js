@@ -25,6 +25,10 @@ const NuevaCuenta = () => {
         e.preventDefault();
         //Validar campos
 
+        //PAssword minimo 6
+
+        //2 pasword iguales
+
         //Pasar Action a reducer
     }
 
@@ -78,7 +82,7 @@ const NuevaCuenta = () => {
                             onChange={onChange}
                         />
                     </div>
-                    
+
                     <div className="campo-form">
                         <input type="submit" className="btn btn-primario btn-block" value="Regístrate" />
                     </div>
