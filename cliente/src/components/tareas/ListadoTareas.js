@@ -20,6 +20,7 @@ export default function ListadoTareas() {
 
                         : tareasProyecto.map(tarea => (
                             <Tarea
+                            key={tarea.nombre}
                                 tarea={tarea}
                             />
                         ))

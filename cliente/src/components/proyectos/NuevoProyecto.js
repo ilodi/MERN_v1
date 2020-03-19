@@ -5,14 +5,14 @@ const NuevoProyecto = () => {
 
     //obtener el state
     const proyectosContext = useContext(proyectoContext);
-    const { formulario, mostrarFormulario } = proyectosContext;
+    const { formulario, mostrarFormulario, agregarProyecto } = proyectosContext;
 
 
     //State para proyectos{}
     const [proyecto, setProyecto] = useState({
         nombre: ''
     });
-
+    const { nombre } = proyecto;
     const onChangeProyecto = e => {
         setProyecto({
             ...proyecto,
@@ -23,10 +23,17 @@ const NuevoProyecto = () => {
     const onSubmit = e => {
         e.preventDefaul();
         //Validar
-
+        if (
+            nombre === ''
+        ) {
+            return;
+        }
         //Agregar al State
-
+        agregarProyecto(proyecto);
         //Reiniciar
+        setProyecto({
+            nombre: ''
+        })
     }
 
     //mostrar el formulario

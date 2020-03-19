@@ -25,7 +25,7 @@ const ListadoProyectos = () => {
             {
                 proyectos.map(proyecto => (
                     <Proyecto
-                        ket={proyecto.id}
+                        key={proyecto.id}
                         proyecto={
                             proyecto
                         }

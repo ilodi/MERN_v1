@@ -1,5 +1,5 @@
 //Import Types
-import { FORMULARIO_PROYECTO,OBTENER_PROYECTOS } from '../../types';
+import { FORMULARIO_PROYECTO, OBTENER_PROYECTOS, AGREGAR_PROYECTO } from '../../types';
 //cuando se detecta el type tanto en este archivo como 
 //en proyectoState es cuando se genera una accion en el case
 
@@ -14,10 +14,19 @@ export default (state, action) => {
             }
         case OBTENER_PROYECTOS:
             //para consumir el payload
-            return{
+            return {
                 ...state,
-                proyectos:action.payload
-            }    
+                proyectos: action.payload
+            }
+        case AGREGAR_PROYECTO:
+            //agregae proyecto
+            //en proyectos primero se le hace una copia a los proyectos y luego se agrega el nuevo en payload
+           //una ves se agregea algo el siguiente paso es esconder el formulario
+            return {
+                ...state,
+                proyectos: [...state.proyectos, action.payload],
+                formulario: false
+            }
         default:
             return state;
     }
