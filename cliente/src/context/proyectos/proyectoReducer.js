@@ -22,11 +22,12 @@ export default (state, action) => {
             //agregae proyecto
             //en proyectos primero se le hace una copia a los proyectos y luego se agrega el nuevo en payload
            //una ves se agregea algo el siguiente paso es esconder el formulario
-            return {
-                ...state,
-                proyectos: [...state.proyectos, action.payload],
-                formulario: false
-            }
+           return {
+            ...state,
+            proyectos: [...state.proyectos, action.payload],
+            formulario: false,
+          
+        }
         default:
             return state;
     }

@@ -1,8 +1,8 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext, useEffect } from 'react';
+import Proyecto from "./Proyecto";
 //import el context
 import proyectoContext from "../../context/proyectos/proyectoContext";
 
-import Proyecto from "./Proyecto";
 
 const ListadoProyectos = () => {
   //extraer context de los proyecto state
@@ -20,7 +20,9 @@ const ListadoProyectos = () => {
   return (
     <ul className="listado-proyectos">
       {proyectos.map(proyecto => (
-        <Proyecto key={proyecto.id} proyecto={proyecto} />
+           <Proyecto 
+           proyecto={proyecto}
+       />
       ))}
     </ul>
   );
